@@ -20,10 +20,8 @@ const userData = [
 
 router.get("/users", verifyToken, (req, res) => {
   const userId = req.user.id
-  console.log(userId)
   try {
     const getUserData = userData.find(user => user.id === userId)
-    console.log(getUserData)
     res.status(200).send({
       data: {
         id: getUserData.id,
@@ -32,7 +30,6 @@ router.get("/users", verifyToken, (req, res) => {
     });
   } catch (error) {
     res.status(500).send({ message: "Internal server error!", error });
-    console.log(error)
   }
 });
 
