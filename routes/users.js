@@ -6,13 +6,13 @@ const { verifyToken } = require("../middleware/auth");
 const userData = [
   {
     id: 1,
-    name: "Sipaling User",
+    name: "User Keren",
     username: "user",
     password: "user",
   },
   {
     id: 2,
-    name: "Sipaling Admin",
+    name: "Admin Keren",
     username: "admin",
     password: "admin",
   },
