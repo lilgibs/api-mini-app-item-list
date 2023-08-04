@@ -53,7 +53,14 @@ router.post("/login", (req, res) => {
       expiresIn: '1h', // expires in 1 hour
     });
 
-    res.status(200).send({ auth: true, accessToken: token });
+    res.status(200).send({
+      auth: true,
+      data: {
+        id: user.id,
+        name: user.name,
+      },
+      accessToken: token
+    });
   } catch (error) {
     res.status(500).send({ message: "Internal server error!" });
   }
